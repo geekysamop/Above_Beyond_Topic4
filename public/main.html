@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            height: 100vh !important;
+            font-family: "Segoe UI", sans-serif;
+            background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/6ee9cd3c-dbb2-4d00-91f5-933fdc29ddcf/dfhb8lx-d84af0af-cd5a-493a-8efd-53f98d08d71b.png/v1/fill/w_1280,h_854,q_80,strp/level_4__demonic_anti_christ_a_by_johnkimartist_dfhb8lx-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9ODU0IiwicGF0aCI6IlwvZlwvNmVlOWNkM2MtZGJiMi00ZDAwLTkxZjUtOTMzZmRjMjlkZGNmXC9kZmhiOGx4LWQ4NGFmMGFmLWNkNWEtNDkzYS04ZWZkLTUzZjk4ZDA4ZDcxYi5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.DBYhF3OEz_2ao_bHvBgeByitCTkUB9PcPwo_N54HI70);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+        }
+
+        .wrapper {
+            display: table;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .container {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+            /* background-color: #fff; */
+        }
+
+        .element {
+            margin: 0 auto ;
+            padding: 20px;
+            top: 50px;
+            color: white;
+            /* filter: blur(10%); */
+            width: 50%;
+            z-index: 2;
+            border-radius: 7px;
+        }
+
+        .happyTrail {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #28a745;
+            border-radius: 50%;
+            opacity: 0.8;
+            z-index: 0;
+            pointer-events: none;
+            filter: blur(2px);
+            animation-duration: 0.5s;
+            animation-name: rainbowFade;
+            animation-timing-function: ease;
+        }
+
+
+        @keyframes rainbowFade {
+            0% {
+                background: #21743b;
+            }
+
+            20% {
+                background: #56d364;
+            }
+
+            40% {
+                background: #95f392;
+            }
+
+            60% {
+                background: #c3f9b7;
+            }
+
+            80% {
+                background: #d9f2e6;
+                opacity: 0.8;
+            }
+
+            100% {
+                background: #e6ffed;
+                opacity: 0;
+            }
+        }
+
+        button {
+            color: #fff;
+            background: linear-gradient(90deg,red,black);
+            /* background: url(btn1.jpg); */
+            background-position: center;
+            font-weight: bold; 
+            border-radius: 5px;
+            padding: 10px 15px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        .home-drone {
+            position: absolute;
+            top: 12;
+            margin-left: 1000px;
+            float: right;
+            height: auto;
+            width: 24.99999999%;
+            animation: drone 5s infinite ;
+        }
+
+        @keyframes drone{
+            0%{
+                transform:translateY(100px) ;
+            }
+            50%{
+                transform:translateY(150px) ;
+            }
+            100%{
+                transform: translateY(100px);
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <img src="https://github.githubassets.com/images/modules/site/home-campaign/hero-drone.webp" alt=""
+        class="home-drone" width="500" height="326">
+    <div class='wrapper'>
+        <div class='container'>
+            <div class="element">
+                <h2>Welcome to Github data Fetcher</h2>
+                <p>What You need to Fetch</p>
+                <a href="/getprofile"><button id="profile">Profile</button></a>
+                <a href="/getrepo"><button id="repos">Repository</button></a>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    document.addEventListener('mousemove', function (e) {
+        var div = document.createElement('div');
+        div.classList.add('happyTrail');
+
+        div.style.top = e.pageY + 'px';
+        div.style.left = e.pageX + 'px';
+
+        document.body.appendChild(div);
+
+        setTimeout(function () {
+            document.body.removeChild(div);
+        }, 500);
+    });
+    setInterval(function () {
+        var div = document.createElement('div');
+        div.classList.add('happyTrail');
+
+        div.style.top = Math.floor(Math.random() * (window.innerHeight - 10)) + 'px';
+        div.style.left = Math.floor(Math.random() * window.innerWidth - 10) + 'px';
+
+        document.body.appendChild(div);
+
+        setTimeout(function () {
+            document.body.removeChild(div);
+        }, 500);
+    }, 20);
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+  integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+<script    src="app.js"></script>
+
+</html>
